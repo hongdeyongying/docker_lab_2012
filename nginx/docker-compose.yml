@@ -1,0 +1,14 @@
+version: '2'
+services:
+  nginx:
+    image: nginx 
+    volumes:
+      - "./data/log:/var/log/nginx"
+      - "./data/cnf/conf.d/:/etc/nginx/conf.d/"
+      - "./data/htdocs:/usr/share/nginx/html"
+      - "/home/release/workspace/SETUP/lab_of_2012/SOFT/MYSOFT/:/usr/share/nginx/html/my-soft"
+      - "/home/release/workspace/SETUP/lab_of_2012/SOFT/UGW/htdocs:/usr/share/nginx/html/wucar"
+
+    restart: always
+    ports:
+     - "80:80"

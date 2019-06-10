@@ -1,0 +1,14 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.7
+    volumes:
+      - "./data/db:/var/lib/mysql"
+    restart: always
+    ports:
+     - "53306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root1234
+      MYSQL_DATABASE: db_wordpress
+      MYSQL_USER: gaoy
+      MYSQL_PASSWORD: gaoy1234
